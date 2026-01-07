@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.demo.dao.DeptDao;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import lombok.extern.log4j.Log4j2;
 // 모델 계층 - 비즈니스 로직처리(업무 프로세스)
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class DeptService {
     @Autowired
     private DeptDao deptDao;

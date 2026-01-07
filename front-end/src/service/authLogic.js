@@ -54,5 +54,3 @@ export const subscribeAuth = (callback) => {
     callback(user)
   })
 }
-
-
