@@ -1,25 +1,93 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+####################################################
+# Environment / Secrets
+####################################################
+.env
+.env.*
+!.env.example
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+####################################################
+# YAML (Spring config µî)
+####################################################
+*.yml
+*.yaml
 
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+####################################################
+# Node / Vite / React
+####################################################
+node_modules/
+dist/
+build/
+.vite/
+.vite-cache/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+.eslintcache
 
-board-project*
+####################################################
+# Java / Spring Boot / Gradle / Maven
+####################################################
+*.class
+*.log
+target/
+build/
+out/
+.gradle/
+gradle/
+!.mvn/wrapper/maven-wrapper.jar
+
+####################################################
+# IntelliJ IDEA
+####################################################
+.idea/
+*.iml
+*.iws
+*.ipr
+
+.gradle/
+.idea/
+bin/
+build/
+
+
+####################################################
+# OS / Editor
+####################################################
+.DS_Store
+Thumbs.db
+#.vscode/
+
+####################################################
+# Spring Boot runtime files
+####################################################
+logs/
+*.pid
+*.hprof
+*.zip
+
+####################################################
+#  Python
+####################################################
+__pycache__/
+Include/
+Lib/
+Scripts/
+share/
+
+
+####################################################
+#  REACT
+####################################################
+node_modules/
+public/
+
+
+
+
+####################################################
+# ETC
+####################################################
+*.exe
+*.iso
+####################################################
