@@ -1,0 +1,11 @@
+2026-04-09 12:59:13 INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-09 12:59:13 INFO  [] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-09 12:59:13 INFO  [] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2026-04-09 12:59:13 INFO  [] c.e.demo.controller.DeptController : deptList호출
+2026-04-09 12:59:13 INFO  [] c.e.demo.controller.DeptController : dname : null
+2026-04-09 12:59:13 INFO  [] c.example.demo.service.DeptService : deptList
+2026-04-09 12:59:13 INFO  [] com.example.demo.dao.DeptDao : [{loc=NEW YORK, dname=ACCOUNTING, deptno=10}, {loc=DALLAS, dname=RESEARCH, deptno=20}, {loc=CHICAGO, dname=SALES, deptno=30}, {loc=BOSTON, dname=OPERATIONS, deptno=40}]
+2026-04-09 12:59:19 INFO  [] o.s.b.w.e.tomcat.GracefulShutdown : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-09 12:59:19 INFO  [] o.s.b.w.e.tomcat.GracefulShutdown : Graceful shutdown complete
+2026-04-09 12:59:19 INFO  [] com.zaxxer.hikari.HikariDataSource : oraPool - Shutdown initiated...
+2026-04-09 12:59:19 INFO  [] com.zaxxer.hikari.HikariDataSource : oraPool - Shutdown completed.

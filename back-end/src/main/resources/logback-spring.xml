@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
+<!-- 로그를 저장할 위치 -->
+    <property name="LOG_DIR" value="./logs"/>
+    <property name="LOG_FILE_NAME" value="board-project-logs"/>
+<!-- 로그를 출력할 곳을 정하는 것이 appender -->
+
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
     <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
     <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
@@ -11,7 +16,22 @@
             <charset>${CONSOLE_LOG_CHARSET}</charset>
         </encoder>
     </appender>
-    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/${LOG_FILE_NAME}.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%X{traceId}] %logger{36} : %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--            <fileNamePattern>${LOG_DIR}/${LOG_FILE_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>-->
+            로그를 최대 30일치만 남기고 31일째 로그부터는 알아서 지워줘!
+            <!--            <maxHistory>30</maxHistory>-->
+            <fileNamePattern>${LOG_DIR}/${LOG_FILE_NAME}-%d{yyyy-MM-dd_HH-mm}.log</fileNamePattern>
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!--include resource="org/springframework/boot/logging/logback/file-appender.xml" /-->
     <logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
     <logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"/>
     <logger name="org.apache.coyote.http11.Http11NioProtocol" level="WARN"/>
@@ -20,7 +40,8 @@
     <logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="ERROR"/>
     <logger name="org.hibernate.validator.internal.util.Version" level="WARN"/>
     <logger name="org.springframework.boot.actuate.endpoint.jmx" level="WARN"/>
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
     </root> 
 </configuration>

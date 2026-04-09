@@ -1,4 +1,4 @@
-package com.example.back_end.controller;
+package com.example.demo.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -41,11 +41,9 @@ public class DeptController {
 	@Autowired
 	private DeptService deptService;// 변수 이름은 줄여쓰지 않음.
 
-	// http://localhost:8000/dept/deptList
-	// http://localhost:8000/dept/61
 	@GetMapping("dept/deptList")
 	public String deptList(DeptVO dvo) {
- 		log.info("deptList호출");
+		log.info("deptList호출");
 		log.info("dname : " + dvo.getDname());
 		List<Map<String, Object>> list = null;
 		list = deptService.deptList(dvo);

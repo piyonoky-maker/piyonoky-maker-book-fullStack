@@ -7,7 +7,7 @@
     <update id="deptUpdate" parameterType="map">
         UPDATE dept
         SET dname = #{dname}
-        ,loc = #{loc}
+          ,loc = #{loc}
         WHERE deptno= #{deptno}
     </update>
 
