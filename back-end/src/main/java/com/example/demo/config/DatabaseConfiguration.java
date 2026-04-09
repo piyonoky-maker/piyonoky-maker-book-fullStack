@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.back_end.config;
 
 import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -30,6 +30,17 @@ public class DatabaseConfiguration {
     public HikariConfig hikariConfig() {
         return new HikariConfig();
     }
+
+
+
+
+
+
+
+
+
+
+
 
     @Bean
     public DataSource dataSource() {
