@@ -1,6 +1,6 @@
-import DeptList from '../dept/DeptList'
-import Header from '../include/Header'
-import Footer from '../include/Footer'
+import DeptList from '../dept/DeptList';
+import Header from '../include/Header';
+import Footer from '../include/Footer';
 
 const DeptPage = () => {
   return (
@@ -9,7 +9,7 @@ const DeptPage = () => {
       <DeptList />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default DeptPage
+export default DeptPage;
